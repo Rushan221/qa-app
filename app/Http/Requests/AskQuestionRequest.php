@@ -28,4 +28,12 @@ class AskQuestionRequest extends FormRequest
             'body' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'A question title is required',
+            'body.required' => 'An explanation is required',
+        ];
+    }
 }
