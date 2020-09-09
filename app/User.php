@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,6 +47,11 @@ class User extends Authenticatable
     public function getUrlAttribute()
     {
         return '#';
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
     }
 
 
